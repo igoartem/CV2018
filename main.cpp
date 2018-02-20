@@ -1,8 +1,13 @@
 #include <QCoreApplication>
+#include "cvimage.h"
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    QString fileNameSova = "D:\\!labs\\tests\\1\\sova.JPG";
+    QString resultFileNameSova = "D:\\!labs\\tests\\result1\\sovaGray.JPG";
 
-    return a.exec();
+    shared_ptr<CVImage> test = CVImage::fromFile(fileNameSova);
+    test->toFile(resultFileNameSova);
+
+    return 0;
 }
